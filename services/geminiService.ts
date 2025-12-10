@@ -1,7 +1,5 @@
 import { GoogleGenAI } from "@google/genai";
 
-const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
-
 const SYSTEM_INSTRUCTION = `
 Você é um especialista renomado na Dieta Keto Carnívora e assistente de vendas do "Guia Iniciante Keto Carnívoro".
 Seu objetivo é tirar dúvidas de potenciais clientes para aumentar a conversão de vendas.
@@ -40,13 +38,17 @@ const getFallbackResponse = (input: string): string => {
 };
 
 export const sendMessageToGemini = async (userMessage: string): Promise<string> => {
-  // Se não houver chave configurada, usa o fallback imediatamente para não quebrar a experiência
+  // Verificação de segurança: Se não tiver chave, usa fallback direto sem tentar iniciar a IA
   if (!process.env.API_KEY) {
     console.warn("API Key ausente. Usando resposta de fallback.");
     return getFallbackResponse(userMessage);
   }
 
   try {
+    // Inicialização "Lazy" (Preguiçosa): Só cria a instância quando o usuário envia a mensagem.
+    // Isso previne o erro de tela branca na inicialização do site.
+    const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
+    
     const response = await ai.models.generateContent({
       model: 'gemini-2.5-flash',
       contents: userMessage,
