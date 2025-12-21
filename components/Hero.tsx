@@ -1,16 +1,17 @@
-
 import React from 'react';
 import { Button } from './Button';
 import { CheckCircle2, ArrowRight, Battery, Wifi, Signal } from 'lucide-react';
+import { trackConversion } from '../services/trackingService';
 
 export const Hero = () => {
   const openCheckout = () => {
+    // Dispara o evento de conversão do Google Ads
+    trackConversion('begin_checkout', 47.00);
     window.open("https://pay.hotmart.com/W103017615F", "_blank");
   };
 
   return (
     <section className="relative min-h-screen flex items-center justify-center overflow-hidden py-20 lg:py-0 bg-dark-900">
-      {/* Abstract Background Texture */}
       <div className="absolute inset-0 z-0">
         <div className="absolute top-0 right-0 w-[500px] h-[500px] bg-carnivore-500/10 rounded-full blur-[100px] -translate-y-1/2 translate-x-1/2"></div>
         <div className="absolute bottom-0 left-0 w-[500px] h-[500px] bg-carnivore-600/5 rounded-full blur-[100px] translate-y-1/2 -translate-x-1/2"></div>
@@ -19,8 +20,6 @@ export const Hero = () => {
 
       <div className="container mx-auto px-4 z-10 relative">
         <div className="flex flex-col lg:flex-row items-center gap-12 lg:gap-20">
-          
-          {/* Left Column: Copy */}
           <div className="lg:w-1/2 text-center lg:text-left pt-10 lg:pt-0">
             <div className="inline-flex items-center gap-2 px-4 py-1.5 mb-8 rounded-full bg-carnivore-500/10 border border-carnivore-500/30 backdrop-blur-sm self-start">
               <span className="relative flex h-2 w-2">
@@ -68,12 +67,8 @@ export const Hero = () => {
             </div>
           </div>
 
-          {/* Right Column: Steak + Phone App Composition */}
           <div className="lg:w-1/2 relative w-full flex justify-center lg:justify-end mt-12 lg:mt-0 perspective-1000">
-             
              <div className="relative w-[350px] md:w-[450px] h-[500px]">
-                
-                {/* 1. Background Steak Image (The Desire) */}
                 <div className="absolute inset-0 rounded-2xl overflow-hidden shadow-2xl shadow-black border-2 border-dark-700 transform rotate-[-3deg] transition-transform hover:rotate-0 duration-500 z-0">
                   <img 
                     src="https://images.unsplash.com/photo-1615937657715-bc7b4b7962c1?q=80&w=1000&auto=format&fit=crop" 
@@ -81,8 +76,6 @@ export const Hero = () => {
                     className="w-full h-full object-cover opacity-80"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-black/40"></div>
-                  
-                  {/* Title Overlay on the Image */}
                   <div className="absolute bottom-6 left-6 right-6">
                     <h2 className="text-3xl font-display font-black text-white leading-none drop-shadow-xl uppercase">
                       Guia Definitivo<br/>
@@ -92,15 +85,9 @@ export const Hero = () => {
                   </div>
                 </div>
 
-                {/* 2. Floating Phone Mockup (The App/Product) */}
                 <div className="absolute -right-4 top-10 w-[240px] h-[480px] bg-black rounded-[3rem] border-8 border-gray-900 shadow-2xl transform rotate-[5deg] hover:rotate-[0deg] transition-all duration-500 z-10 hover:scale-105">
-                  {/* Phone Notch/Island */}
                   <div className="absolute top-0 left-1/2 transform -translate-x-1/2 w-1/3 h-6 bg-black rounded-b-xl z-20"></div>
-                  
-                  {/* Phone Screen */}
                   <div className="w-full h-full bg-dark-800 rounded-[2.5rem] overflow-hidden flex flex-col relative">
-                    
-                    {/* Status Bar */}
                     <div className="flex justify-between items-center px-6 pt-3 pb-2 text-white text-[10px]">
                       <span>9:41</span>
                       <div className="flex gap-1">
@@ -109,18 +96,12 @@ export const Hero = () => {
                         <Battery size={12} />
                       </div>
                     </div>
-
-                    {/* App Content */}
                     <div className="flex-1 p-4 flex flex-col items-center">
-                       {/* App Logo */}
                        <div className="w-16 h-16 rounded-full bg-gradient-to-br from-carnivore-400 to-carnivore-600 flex items-center justify-center mb-4 shadow-lg shadow-carnivore-500/20">
                           <span className="text-2xl">🥩</span>
                        </div>
-                       
                        <h3 className="text-white font-bold text-center mb-1">Keto Carnívora</h3>
                        <p className="text-xs text-gray-400 mb-6">App Oficial do Guia</p>
-
-                       {/* App Dashboard UI Mockup */}
                        <div className="w-full space-y-3">
                           <div className="bg-dark-700/50 p-3 rounded-xl border border-white/5 flex items-center justify-between">
                              <div>
@@ -129,7 +110,6 @@ export const Hero = () => {
                              </div>
                              <div className="h-2 w-12 bg-carnivore-500 rounded-full"></div>
                           </div>
-
                           <div className="bg-dark-700/50 p-3 rounded-xl border border-white/5">
                              <p className="text-[10px] text-gray-400 mb-2">Refeição de Hoje</p>
                              <div className="h-24 bg-[url('https://images.unsplash.com/photo-1544025162-d76690b68f11?auto=format&fit=crop&q=80&w=200')] bg-cover rounded-lg relative overflow-hidden group">
@@ -138,14 +118,11 @@ export const Hero = () => {
                                 </div>
                              </div>
                           </div>
-
                           <div className="bg-carnivore-500 p-3 rounded-xl shadow-lg shadow-carnivore-500/20 mt-4">
                              <p className="text-xs font-bold text-dark-900 text-center">Acessar Guia Completo</p>
                           </div>
                        </div>
                     </div>
-
-                    {/* Bottom Nav Mockup */}
                     <div className="h-14 bg-dark-900 border-t border-white/5 flex justify-around items-center px-4">
                        <div className="w-6 h-6 rounded bg-carnivore-500"></div>
                        <div className="w-6 h-6 rounded bg-dark-700"></div>
@@ -153,11 +130,8 @@ export const Hero = () => {
                     </div>
                   </div>
                 </div>
-
              </div>
-
           </div>
-
         </div>
       </div>
     </section>

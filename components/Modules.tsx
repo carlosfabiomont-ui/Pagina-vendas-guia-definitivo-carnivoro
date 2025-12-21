@@ -1,8 +1,13 @@
-
 import React from 'react';
 import { BookOpen, ShoppingCart } from 'lucide-react';
+import { trackConversion } from '../services/trackingService';
 
 export const Modules = () => {
+  const handleBuyClick = () => {
+    trackConversion('add_to_cart');
+    window.open("https://pay.hotmart.com/W103017615F", "_blank");
+  };
+
   const modules = [
     { title: "Módulo 1: Introdução", desc: "A ciência por trás da dieta e por que ela funciona." },
     { title: "Módulo 2: O Que Comer", desc: "Lista completa de alimentos permitidos e proibidos (sem confusão)." },
@@ -24,7 +29,7 @@ export const Modules = () => {
             <div key={idx} className="p-6 bg-dark-900 rounded-xl border border-dark-700 hover:border-carnivore-500 transition-all duration-300 group">
               <div className="flex items-center gap-3 mb-4">
                 <div className="p-2 bg-dark-800 rounded-lg group-hover:bg-carnivore-500 group-hover:text-dark-900 transition-all duration-300">
-                  <BookOpen className="w-6 h-6 text-carnivore-500 group-hover:text-dark-900" />
+                  < BookOpen className="w-6 h-6 text-carnivore-500 group-hover:text-dark-900" />
                 </div>
                 <h3 className="font-bold text-lg text-white">{mod.title}</h3>
               </div>
@@ -33,9 +38,7 @@ export const Modules = () => {
           ))}
         </div>
 
-        {/* Pricing/Checkout Anchor */}
         <div id="checkout" className="max-w-2xl mx-auto bg-gradient-to-b from-dark-700 to-dark-900 p-8 rounded-2xl border border-carnivore-500/30 text-center shadow-2xl relative overflow-hidden">
-          {/* Metallic Gold Shine Bar */}
           <div className="absolute top-0 left-0 w-full h-2 bg-gradient-to-r from-carnivore-700 via-carnivore-200 to-carnivore-700"></div>
           
           <p className="text-carnivore-400 uppercase tracking-widest text-sm mb-2 font-semibold">Oferta por Tempo Limitado</p>
@@ -45,7 +48,7 @@ export const Modules = () => {
           </div>
           
           <button 
-            onClick={() => window.open("https://pay.hotmart.com/W103017615F", "_blank")}
+            onClick={handleBuyClick}
             className="w-full bg-green-600 hover:bg-green-500 text-white font-bold text-2xl py-6 px-8 rounded-xl shadow-lg shadow-green-900/20 transform hover:-translate-y-1 transition-all flex items-center justify-center gap-3 animate-pulse"
           >
             <ShoppingCart />
