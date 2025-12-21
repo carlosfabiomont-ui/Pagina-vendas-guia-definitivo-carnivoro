@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { BookOpen, ShoppingCart } from 'lucide-react';
 
@@ -5,7 +6,7 @@ export const Modules = () => {
   const modules = [
     { title: "Módulo 1: Introdução", desc: "A ciência por trás da dieta e por que ela funciona." },
     { title: "Módulo 2: O Que Comer", desc: "Lista completa de alimentos permitidos e proibidos (sem confusão)." },
-    { title: "Módulo 3: Fase de Adaptação", desc: "Como superar a 'gripe keto' e transicionar sem sofrimento." },
+    { title: "Módulo 3: Fase de Adaptacão", desc: "Como superar a 'gripe keto' e transicionar sem sofrimento." },
     { title: "Módulo 4: Economia", desc: "Como fazer a dieta gastando pouco no açougue." },
     { title: "Bônus: Receitas", desc: "Preparações deliciosas para variar o cardápio." },
     { title: "Bônus: Jejum Intermitente", desc: "Como potencializar seus resultados em 10x." },
@@ -40,7 +41,7 @@ export const Modules = () => {
           <p className="text-carnivore-400 uppercase tracking-widest text-sm mb-2 font-semibold">Oferta por Tempo Limitado</p>
           <div className="flex justify-center items-end gap-3 mb-6">
             <span className="text-gray-500 text-xl line-through decoration-carnivore-700/50">R$ 97,00</span>
-            <span className="text-5xl font-display font-extrabold text-white text-glow">R$ 39,90</span>
+            <span className="text-5xl font-display font-extrabold text-white text-glow">R$ 47,00</span>
           </div>
           
           <button 

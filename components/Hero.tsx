@@ -1,3 +1,4 @@
+
 import React from 'react';
 import { Button } from './Button';
 import { CheckCircle2, ArrowRight, Battery, Wifi, Signal } from 'lucide-react';
@@ -47,10 +48,12 @@ export const Hero = () => {
                 BAIXAR O GUIA AGORA
                 <ArrowRight className="inline-block ml-2 w-6 h-6" />
               </Button>
-              <p className="text-xs text-gray-500 mt-2 sm:mt-0">
-                <span className="block text-white font-bold">R$ 39,90</span>
-                Acesso Vitalício
-              </p>
+              <div className="text-center sm:text-left">
+                <p className="text-xs text-gray-500 mt-2 sm:mt-0">
+                  <span className="block text-white font-bold text-lg">R$ 47,00</span>
+                  Acesso Vitalício
+                </p>
+              </div>
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4 sm:gap-8 justify-center lg:justify-start text-sm text-gray-400">

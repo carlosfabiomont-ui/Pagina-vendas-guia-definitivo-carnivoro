@@ -1,3 +1,4 @@
+
 import { GoogleGenAI } from "@google/genai";
 
 const SYSTEM_INSTRUCTION = `
@@ -18,8 +19,8 @@ Regras de conduta:
 const FALLBACK_RESPONSES: Record<string, string> = {
   cafe: "Sim! O café é permitido, mas sem açúcar. No Guia, ensinamos como turbinar seu café para te dar o dobro de energia e queimar gordura.",
   fome: "Jamais! Na dieta carnívora você come até a saciedade. A diferença é que a carne nutre de verdade, então sua fome desaparece por horas.",
-  preço: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 39,90 com acesso vitalício.",
-  valor: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 39,90 com acesso vitalício.",
+  preço: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 47,00 com acesso vitalício.",
+  valor: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 47,00 com acesso vitalício.",
   caro: "Caro é gastar com remédios e comidas que te adoecem. O Guia custa menos que uma pizza e muda sua vida para sempre.",
   doce: "A vontade de doces desaparece em poucos dias quando seu corpo se nutre de verdade. O Guia tem estratégias para essa fase de adaptação.",
   default: "Essa é uma dúvida comum! O Guia Keto Carnívoro cobre exatamente isso com um passo a passo detalhado. Vale muito a pena conferir o material completo."
@@ -38,15 +39,12 @@ const getFallbackResponse = (input: string): string => {
 };
 
 export const sendMessageToGemini = async (userMessage: string): Promise<string> => {
-  // Verificação de segurança: Se não tiver chave, usa fallback direto sem tentar iniciar a IA
   if (!process.env.API_KEY) {
     console.warn("API Key ausente. Usando resposta de fallback.");
     return getFallbackResponse(userMessage);
   }
 
   try {
-    // Inicialização "Lazy" (Preguiçosa): Só cria a instância quando o usuário envia a mensagem.
-    // Isso previne o erro de tela branca na inicialização do site.
     const ai = new GoogleGenAI({ apiKey: process.env.API_KEY });
     
     const response = await ai.models.generateContent({
@@ -63,7 +61,6 @@ export const sendMessageToGemini = async (userMessage: string): Promise<string> 
     return response.text || getFallbackResponse(userMessage);
   } catch (error) {
     console.error("Erro na API Gemini (usando fallback):", error);
-    // Em caso de erro (cota excedida, erro de rede), usa o fallback
     return getFallbackResponse(userMessage);
   }
 };
