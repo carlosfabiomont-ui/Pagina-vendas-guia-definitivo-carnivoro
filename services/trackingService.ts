@@ -1,6 +1,6 @@
 
 const GOOGLE_ADS_ID = 'AW-11360819651';
-const CONVERSION_LABEL = 'UpNCILkidUbEMOzoakq';
+const CONVERSION_LABEL = 'fUpNCILkidUbEMOzoakq'; // Atualizado com o 'f' inicial do snippet
 
 /**
  * Dispara eventos de conversão para o Google Analytics e Google Ads.
@@ -21,7 +21,7 @@ export const trackConversion = (eventName: string, value: number = 47.00) => {
     });
 
     // 2. Rastreamento Específico de Conversão Google Ads
-    // Disparamos a conversão principal para qualquer intenção de compra
+    // Disparamos a conversão para eventos que indicam clara intenção de compra
     const purchaseIntentEvents = ['begin_checkout', 'add_to_cart', 'begin_checkout_sticky', 'purchase_click'];
     
     if (purchaseIntentEvents.includes(eventName)) {
@@ -30,9 +30,9 @@ export const trackConversion = (eventName: string, value: number = 47.00) => {
         'value': value,
         'currency': 'BRL'
       });
-      console.log(`[Tracking] Conversão Google Ads disparada via evento: ${eventName}`);
+      console.log(`[Tracking Ads] Conversão disparada: ${GOOGLE_ADS_ID}/${CONVERSION_LABEL} | Valor: ${value} BRL`);
     }
   } else {
-    console.warn('[Tracking] gtag.js não detectado. Verifique a instalação no index.html');
+    console.warn('[Tracking] gtag.js não detectado no objeto window.');
   }
 };
