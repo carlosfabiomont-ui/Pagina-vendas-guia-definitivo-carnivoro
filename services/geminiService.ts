@@ -19,8 +19,8 @@ Regras de conduta:
 const FALLBACK_RESPONSES: Record<string, string> = {
   cafe: "Sim! O café é permitido, mas sem açúcar. No Guia, ensinamos como turbinar seu café para te dar o dobro de energia e queimar gordura.",
   fome: "Jamais! Na dieta carnívora você come até a saciedade. A diferença é que a carne nutre de verdade, então sua fome desaparece por horas.",
-  preço: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 47,00 com acesso vitalício.",
-  valor: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 47,00 com acesso vitalício.",
+  preço: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 27,00 com acesso vitalício.",
+  valor: "O valor é simbólico perto da transformação que você terá. Hoje está por apenas R$ 27,00 com acesso vitalício.",
   caro: "Caro é gastar com remédios e comidas que te adoecem. O Guia custa menos que uma pizza e muda sua vida para sempre.",
   doce: "A vontade de doces desaparece em poucos dias quando seu corpo se nutre de verdade. O Guia tem estratégias para essa fase de adaptação.",
   default: "Essa é uma dúvida comum! O Guia Keto Carnívoro cobre exatamente isso com um passo a passo detalhado. Vale muito a pena conferir o material completo."

@@ -44,7 +44,7 @@ export const Modules = () => {
           <p className="text-carnivore-400 uppercase tracking-widest text-sm mb-2 font-semibold">Oferta por Tempo Limitado</p>
           <div className="flex justify-center items-end gap-3 mb-6">
             <span className="text-gray-500 text-xl line-through decoration-carnivore-700/50">R$ 97,00</span>
-            <span className="text-5xl font-display font-extrabold text-white text-glow">R$ 47,00</span>
+            <span className="text-5xl font-display font-extrabold text-white text-glow">R$ 27,00</span>
           </div>
           
           <button 

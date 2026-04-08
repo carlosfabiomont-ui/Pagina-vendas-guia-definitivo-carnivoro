@@ -32,7 +32,7 @@ export const StickyCta = () => {
         className="w-full bg-green-600 text-white font-bold py-3.5 rounded-lg shadow-lg flex items-center justify-center gap-2 animate-pulse hover:bg-green-500 transition-colors"
       >
         <ShoppingCart size={20} />
-        COMPRAR AGORA - R$ 47,00
+        COMPRAR AGORA - R$ 27,00
       </button>
     </div>
   );

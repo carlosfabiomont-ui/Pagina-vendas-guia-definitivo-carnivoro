@@ -6,7 +6,7 @@ import { trackConversion } from '../services/trackingService';
 export const Hero = () => {
   const openCheckout = () => {
     // Dispara o evento de conversão do Google Ads
-    trackConversion('begin_checkout', 47.00);
+    trackConversion('begin_checkout', 27.00);
     window.open("https://pay.hotmart.com/W103017615F", "_blank");
   };
 
@@ -49,7 +49,7 @@ export const Hero = () => {
               </Button>
               <div className="text-center sm:text-left">
                 <p className="text-xs text-gray-500 mt-2 sm:mt-0">
-                  <span className="block text-white font-bold text-lg">R$ 47,00</span>
+                  <span className="block text-white font-bold text-lg">R$ 27,00</span>
                   Acesso Vitalício
                 </p>
               </div>

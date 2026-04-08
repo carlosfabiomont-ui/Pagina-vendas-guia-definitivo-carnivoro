@@ -5,9 +5,9 @@ const CONVERSION_LABEL = 'fUpNCILkidUbEMOzoakq'; // Atualizado com o 'f' inicial
 /**
  * Dispara eventos de conversão para o Google Analytics e Google Ads.
  * @param eventName Nome do evento (ex: 'begin_checkout', 'add_to_cart')
- * @param value Valor da conversão (padrão R$ 47,00)
+ * @param value Valor da conversão (padrão R$ 27,00)
  */
-export const trackConversion = (eventName: string, value: number = 47.00) => {
+export const trackConversion = (eventName: string, value: number = 27.00) => {
   if (typeof window !== 'undefined' && (window as any).gtag) {
     // 1. Rastreamento Geral de Evento (Google Analytics / Google Tag)
     (window as any).gtag('event', eventName, {
